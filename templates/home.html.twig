@@ -1,0 +1,36 @@
+{% extends "base.html.twig"%}
+
+{% block title %} Home {%endblock%}
+
+{%block body %} 
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Cathegorie</th>
+    </tr>
+  </thead>
+   {% for product in products %}
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.category.name}}</td>
+      <td>
+      {#  <a href="{{path('editer',{'id': task.id} )}}"><i class="fa-solid fa-pen-to-square"></i></a> #}
+      {# <a href="{{path('delete',{'id': task.id} )}}">Delete</a> #}
+      <td><a href="{{path('show_product',{'id': product.id} )}}"><i class="fa-solid fa-eye"></i></a>
+        <a href="{{path('edit',{'id' : product.id })}}"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="{{path('delete',{'id' : product.id })}}"><i class="fa-solid fa-trash "></i></a>
+      </td>
+    </tr>
+  </tbody>
+    {% endfor %}
+</table>
+
+{% endblock%}

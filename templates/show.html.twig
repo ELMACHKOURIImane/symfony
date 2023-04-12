@@ -1,0 +1,16 @@
+{% extends "base.html.twig"%}
+
+{% block title %} Show page {%endblock%}
+
+{%block body %}
+
+<div class="container">
+      <h1>{{product.name}}</h1> 
+      <figure class="figure">
+      <img src="{{asset('/uploads/'~product.image)}}" class="figure-img img-fluid rounded" alt="{{product.id}}">
+      <figcaption class="figure-caption">{{product.price}}</figcaption>
+      <figcaption class="figure-caption">{{product.description}}</figcaption>
+      </figure>
+ </div>
+ 
+{% endblock%}

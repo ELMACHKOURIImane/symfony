@@ -1,0 +1,30 @@
+{% extends "base.html.twig"%}
+
+{% block title %} Show Cathegorie {%endblock%}
+
+{%block body %}
+
+<div class="container">
+<h1>Welcome to {{cathegorie.name}} Cathegory</h1>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+   {% for product in cathegorie.products %}
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.description}}</td>
+      <td>
+ </div>
+
+ {% endfor %}
+ 
+{% endblock %}
